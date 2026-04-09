@@ -1,294 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nehemiah Ng'anjo — CV</title>
+  <title>Nehemiah Ng'anjo | IT Professional</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:#f0f2f5; font-family:'Inter',sans-serif; color:#1a1a2e; line-height:1.6; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .page {
-      max-width:860px; margin:40px auto; background:#fff;
-      box-shadow:0 4px 40px rgba(0,0,0,0.12); border-radius:4px; overflow:hidden;
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --accent2: #06b6d4;
+      --light: #f8fafc;
+      --muted: #64748b;
+      --card: #ffffff;
+      --border: #e2e8f0;
     }
 
-    /* Header */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    /* HERO */
     header {
-      background:linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
-      color:#fff; padding:48px 52px 40px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0ea5e9 100%);
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    header h1 { font-size:2rem; font-weight:700; letter-spacing:-0.5px; }
-    header .title { color:#7eb8f7; font-size:0.92rem; font-weight:500; margin:6px 0 16px; letter-spacing:0.3px; }
-    .contact-row { display:flex; flex-wrap:wrap; gap:18px; font-size:0.8rem; color:#b0c4de; }
-    .contact-row a { color:#7eb8f7; text-decoration:none; }
-    .contact-row a:hover { text-decoration:underline; }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; font-weight: 700; color: #fff;
+      margin: 0 auto 20px;
+      border: 4px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.5px; }
+    header p.title {
+      font-size: 1rem; font-weight: 400; color: #93c5fd;
+      margin: 8px 0 20px; letter-spacing: 0.5px;
+    }
+    .contact-bar {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+      margin-top: 20px;
+    }
+    .contact-bar a {
+      color: #e0f2fe; text-decoration: none; font-size: 0.85rem;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .contact-bar a:hover { color: #fff; }
 
-    /* Layout */
-    .body { display:grid; grid-template-columns:1fr 280px; }
+    /* LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    main { padding: 50px 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; max-width: 1100px; margin: 0 auto; }
 
-    /* Main column */
-    .main { padding:40px 44px; border-right:1px solid #eef0f4; }
-
-    /* Sidebar */
-    .sidebar { padding:36px 28px; background:#fafbfc; }
-
-    section { margin-bottom:36px; }
-    h2 {
-      font-size:0.68rem; font-weight:700; text-transform:uppercase;
-      letter-spacing:2px; color:#0f3460; border-bottom:2px solid #0f3460;
-      padding-bottom:6px; margin-bottom:18px;
+    /* SECTIONS */
+    section { margin-bottom: 30px; }
+    .section-title {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
     }
 
-    /* Experience */
-    .job { margin-bottom:24px; }
-    .job:last-child { margin-bottom:0; }
-    .job-header { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px; }
-    .job-header strong { font-size:0.95rem; font-weight:600; color:#1a1a2e; }
-    .job-header .date { font-size:0.75rem; color:#7eb8f7; background:#eef5ff; padding:2px 8px; border-radius:20px; white-space:nowrap; }
-    .job .org { font-size:0.8rem; color:#555; margin:3px 0 10px; font-style:italic; }
-    .job ul { padding-left:16px; }
-    .job ul li { font-size:0.83rem; color:#444; margin-bottom:5px; }
-
-    /* Education */
-    .edu { margin-bottom:16px; }
-    .edu strong { font-size:0.88rem; font-weight:600; }
-    .edu p { font-size:0.8rem; color:#666; }
-
-    /* Sidebar skills */
-    .skill-group { margin-bottom:22px; }
-    .skill-group h3 { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#0f3460; margin-bottom:10px; }
-    .tags { display:flex; flex-wrap:wrap; gap:6px; }
-    .tag { background:#eef5ff; color:#0f3460; font-size:0.72rem; padding:3px 9px; border-radius:3px; font-weight:500; }
-
-    /* Projects */
-    .project { margin-bottom:14px; }
-    .project strong { font-size:0.85rem; font-weight:600; display:block; }
-    .project strong a { color:#0f3460; text-decoration:none; }
-    .project strong a:hover { text-decoration:underline; }
-    .project p { font-size:0.78rem; color:#666; }
-    .project .stack { font-size:0.72rem; color:#7eb8f7; margin-top:2px; }
-
-    /* References */
-    .ref { margin-bottom:16px; }
-    .ref strong { font-size:0.85rem; font-weight:600; display:block; }
-    .ref p { font-size:0.78rem; color:#666; }
-
-    /* Profile */
-    .profile p { font-size:0.86rem; color:#444; text-align:justify; }
-
-    @media(max-width:680px) {
-      .body { grid-template-columns:1fr; }
-      .main { padding:28px 24px; border-right:none; border-bottom:1px solid #eef0f4; }
-      .sidebar { padding:28px 24px; }
-      header { padding:36px 24px 28px; }
+    /* CARD */
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid var(--border);
     }
-    @media print {
-      body { background:#fff; }
-      .page { box-shadow:none; margin:0; border-radius:0; }
+
+    /* SKILLS */
+    .skill-tag {
+      display: inline-block;
+      background: #eff6ff; color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      border-radius: 20px; padding: 4px 12px;
+      font-size: 0.78rem; font-weight: 500;
+      margin: 4px 3px;
+    }
+
+    /* EXPERIENCE */
+    .job { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+    .job-title { font-size: 1rem; font-weight: 600; color: var(--primary); }
+    .job-company { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin: 2px 0; }
+    .job-date {
+      font-size: 0.78rem; color: var(--muted);
+      background: #f1f5f9; padding: 3px 10px; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .job ul { margin-top: 10px; padding-left: 18px; }
+    .job ul li { font-size: 0.88rem; color: #334155; margin-bottom: 5px; }
+
+    /* PROJECTS */
+    .project {
+      padding: 16px; border-radius: 8px;
+      border: 1px solid var(--border); margin-bottom: 12px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .project:hover { box-shadow: 0 4px 16px rgba(59,130,246,0.1); border-color: #93c5fd; }
+    .project-name { font-weight: 600; font-size: 0.95rem; color: var(--primary); }
+    .project-stack { font-size: 0.78rem; color: var(--accent); margin: 4px 0; }
+    .project p { font-size: 0.85rem; color: #475569; }
+
+    /* EDUCATION */
+    .edu { margin-bottom: 16px; }
+    .edu-degree { font-weight: 600; font-size: 0.92rem; }
+    .edu-school { font-size: 0.85rem; color: var(--accent); }
+    .edu-year { font-size: 0.8rem; color: var(--muted); }
+
+    /* PROFILE SUMMARY */
+    .profile-text { font-size: 0.9rem; color: #334155; line-height: 1.8; }
+
+    /* LANGUAGES */
+    .lang-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .lang-name { font-size: 0.88rem; font-weight: 500; }
+    .lang-level { font-size: 0.78rem; color: var(--muted); background: #f1f5f9; padding: 2px 10px; border-radius: 20px; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 30px 20px;
+      font-size: 0.8rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <header>
-    <h1>Nehemiah Ng'anjo</h1>
-    <p class="title">Systems & Network Administrator &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; IT Infrastructure Specialist</p>
-    <div class="contact-row">
-      <span>📍 Rumphi, Malawi 🇲🇼</span>
-      <a href="tel:+265882730381">+265 0882730381</a>
-      <a href="mailto:nehemiahnganjo@outlook.com">nehemiahnganjo@outlook.com</a>
-      <a href="https://github.com/Nehemiahnganjo" target="_blank">github.com/Nehemiahnganjo</a>
-      <a href="https://linkedin.com/in/nehemiah-ng-anjo-773ba01b5" target="_blank">LinkedIn</a>
-      <a href="https://wa.me/265882730381" target="_blank">WhatsApp</a>
-    </div>
-  </header>
+<header>
+  <div class="avatar">N</div>
+  <h1>Nehemiah Ng'anjo</h1>
+  <p class="title">Systems & Network Administrator &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; IT Infrastructure Specialist</p>
+  <div class="contact-bar">
+    <a href="mailto:nehemiahnganjo@outlook.com"><i class="fas fa-envelope"></i> nehemiahnganjo@outlook.com</a>
+    <a href="tel:+2650882730381"><i class="fas fa-phone"></i> +265 0882 730 381</a>
+    <a href="https://linkedin.com/in/nehemiah-ng-anjo-773ba01b5" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/Nehemiahnganjo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="#"><i class="fas fa-map-marker-alt"></i> Rumphi, Malawi</a>
+  </div>
+</header>
 
-  <div class="body">
+<main>
+  <div class="grid">
 
-    <!-- MAIN -->
-    <div class="main">
+    <!-- LEFT COLUMN -->
+    <div>
 
-      <section class="profile">
-        <h2>Profile</h2>
-        <p>Results-driven IT professional with over five years of experience spanning network administration, server infrastructure, full-stack web and mobile development, CCTV systems, and financial software management. Sole IT Officer at Unique SACCO — managing end-to-end infrastructure and leading digital transformation for rural financial inclusion. Proficient in Windows Server (Active Directory, Domain Controller, Exchange), Cisco networking, Python/Django, PHP, Kotlin, and fintech platforms including FinFinancials (MFI Hub) and Bankers Realm (Craft Silicon). Also building Ng'anjo OS — a custom Arch Linux distro — and NeoDesktop, a custom GUI built from scratch.</p>
+      <section class="card">
+        <div class="section-title">Profile</div>
+        <p class="profile-text">
+          Results-driven IT professional with 5+ years of experience spanning network administration, server infrastructure, full-stack web & mobile development, CCTV systems, and financial software management. Built and maintained end-to-end IT infrastructure and led digital transformation for rural financial inclusion.
+        </p>
       </section>
 
-      <section>
-        <h2>Experience</h2>
+      <section class="card">
+        <div class="section-title">Core Skills</div>
+        <span class="skill-tag">Python / Django</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">Kotlin / Android</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">Windows Server</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">Cisco Networking</span>
+        <span class="skill-tag">TCP/IP / DNS / DHCP</span>
+        <span class="skill-tag">VPN / Firewall</span>
+        <span class="skill-tag">VMware</span>
+        <span class="skill-tag">MySQL / SQL Server</span>
+        <span class="skill-tag">CCTV Systems</span>
+        <span class="skill-tag">FinFinancials</span>
+        <span class="skill-tag">Bankers Realm</span>
+        <span class="skill-tag">IoT / Raspberry Pi</span>
+        <span class="skill-tag">Linux Admin</span>
+        <span class="skill-tag">Git</span>
+      </section>
 
-        <div class="job">
-          <div class="job-header">
-            <strong>IT Officer &amp; Full-Stack Developer</strong>
-            <span class="date">Nov 2020 — Present</span>
-          </div>
-          <p class="org">Unique SACCO (formerly Rumphi Teachers SACCO) — Rumphi, Malawi</p>
-          <ul>
-            <li>Manage full IT lifecycle as sole IT personnel — infrastructure, security, software, and development for a SACCO serving hundreds of civil servant members.</li>
-            <li>Configured and manage Active Directory Domain Controller, Group Policy, Microsoft Exchange Server, and user access control.</li>
-            <li>Designed and installed network infrastructure: Cisco routers & switches, TCP/IP, VPN, firewalls, DNS/DHCP, and wireless networks.</li>
-            <li>Installed and configured CCTV surveillance systems including DVR/NVR setup and remote monitoring.</li>
-            <li>Administered Bankers Realm (Craft Silicon) on MSSQL; led full migration to FinFinancials by MFI Hub including data cleaning, onboarding, and staff training.</li>
-            <li>Built uniquesacco.com — full business website with floating CMS panel and session-persistent content editing.</li>
-            <li>Developed native Android app (Kotlin) for members to access accounts and SACCO services on mobile.</li>
-            <li>Implemented USSD 24/7 mobile transaction access for rural members; led digital lending under the FInES Project.</li>
-            <li>Manage DHIS2 health information system deployments.</li>
-          </ul>
+      <section class="card">
+        <div class="section-title">Education</div>
+        <div class="edu">
+          <div class="edu-degree">City & Guilds Level 3 IVQ Advanced Diploma</div>
+          <div class="edu-school">IT Systems Support — St. John Paul II College, Blantyre</div>
+          <div class="edu-year">Completed 2018</div>
         </div>
-
-        <div class="job">
-          <div class="job-header">
-            <strong>IT Technician</strong>
-            <span class="date">Nov 2019 — Jul 2020</span>
-          </div>
-          <p class="org">Malawi College of Accountancy — Blantyre, Malawi</p>
-          <ul>
-            <li>Delivered first-line IT support across multiple campuses for staff and students.</li>
-            <li>Assisted in server maintenance, Active Directory user management, and network connectivity on Windows environments.</li>
-            <li>Installed and maintained ICT equipment supporting e-learning and business simulation programs.</li>
-            <li>Managed software installations, updates, antivirus, backups, and Microsoft Office.</li>
-          </ul>
+        <div class="edu">
+          <div class="edu-degree">TEVET Diploma in Information Technology</div>
+          <div class="edu-school">St. John Paul II College, Blantyre</div>
+          <div class="edu-year">Completed 2019</div>
         </div>
-
-        <div class="job">
-          <div class="job-header">
-            <strong>Workshop Technician / IT Trainer Intern</strong>
-            <span class="date">Jan 2019 — Nov 2019</span>
-          </div>
-          <p class="org">St. John Paul II College (Beehive) — Blantyre, Malawi</p>
-          <ul>
-            <li>Maintained IT labs, performed hardware repairs, and configured network setups for training environments.</li>
-            <li>Delivered hands-on IT training covering system support, networking, and software troubleshooting.</li>
-            <li>Assisted in TEVET curriculum delivery for ICT systems support vocational programmes.</li>
-          </ul>
+        <div class="edu">
+          <div class="edu-degree">Malawi School Certificate of Education (MSCE)</div>
+          <div class="edu-school">Trust Academy Secondary School, Mzuzu</div>
+          <div class="edu-year">Completed 2015</div>
         </div>
       </section>
 
-      <section>
-        <h2>Education</h2>
-        <div class="edu">
-          <strong>City & Guilds Level 3 IVQ Advanced Diploma — IT Systems Support</strong>
-          <p>St. John Paul II College (Beehive), Blantyre &nbsp;·&nbsp; 2018</p>
-        </div>
-        <div class="edu">
-          <strong>TEVET Diploma in Information Technology</strong>
-          <p>St. John Paul II College (Beehive), Blantyre &nbsp;·&nbsp; 2019</p>
-        </div>
-        <div class="edu">
-          <strong>Malawi School Certificate of Education (MSCE)</strong>
-          <p>Trust Academy Secondary School, Mzuzu &nbsp;·&nbsp; 2015</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>References</h2>
-        <p style="font-size:0.86rem;color:#666;font-style:italic;">Available upon request.</p>
+      <section class="card">
+        <div class="section-title">Languages</div>
+        <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span class="lang-name">Chichewa</span><span class="lang-level">Fluent</span></div>
       </section>
 
     </div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+    <!-- RIGHT COLUMN -->
+    <div>
 
-      <div class="skill-group">
-        <h3>Languages</h3>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Kotlin</span>
-          <span class="tag">JavaScript</span><span class="tag">Bash</span>
+      <section class="card">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">IT Manager & Full-Stack Developer</div>
+              <div class="job-company">Rumphi Teachers SACCO, Rumphi</div>
+            </div>
+            <span class="job-date">Nov 2020 – Present</span>
+          </div>
+          <ul>
+            <li>Manage full IT lifecycle as sole IT personnel — infrastructure, security, software & development.</li>
+            <li>Configured Active Directory Domain Controller, Group Policy, Microsoft Exchange Server.</li>
+            <li>Designed & installed network infrastructure: Cisco routers/switches, VPN, firewalls, DNS/DHCP.</li>
+            <li>Installed and configured CCTV surveillance systems with remote monitoring.</li>
+            <li>Led full platform migration from Bankers Realm to FinFinancials (MFI Hub).</li>
+            <li>Built <strong>uniquesacco.com</strong> — business website with floating CMS panel.</li>
+            <li>Built <strong>app.uniquesacco.com</strong> — PHP REST API CRM with 10-module SPA admin panel.</li>
+            <li>Developed native <strong>Unique SACCO Android App</strong> (Kotlin) for member self-service.</li>
+            <li>Implemented USSD 24/7 mobile banking for rural members under the FInES Project.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="skill-group">
-        <h3>Frameworks</h3>
-        <div class="tags">
-          <span class="tag">Django</span><span class="tag">Laravel</span><span class="tag">Android SDK</span>
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">IT Technician</div>
+              <div class="job-company">Malawi College of Accountancy (Head Office), Blantyre</div>
+            </div>
+            <span class="job-date">Nov 2019 – Jul 2020</span>
+          </div>
+          <ul>
+            <li>Delivered first-line IT support across multiple campuses with minimal downtime.</li>
+            <li>Assisted in server maintenance, Active Directory management, and network connectivity.</li>
+            <li>Managed software installations, antivirus, backups, and Microsoft Office applications.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="skill-group">
-        <h3>Infrastructure</h3>
-        <div class="tags">
-          <span class="tag">Cisco</span><span class="tag">Windows Server</span><span class="tag">Active Directory</span>
-          <span class="tag">Exchange Server</span><span class="tag">VMware</span><span class="tag">Linux</span>
-          <span class="tag">DHIS2</span><span class="tag">CCTV</span>
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Workshop Technician / IT Trainer Intern</div>
+              <div class="job-company">St. John Paul II College (Beehive), Blantyre</div>
+            </div>
+            <span class="job-date">Jan 2019 – Nov 2019</span>
+          </div>
+          <ul>
+            <li>Maintained IT labs, performed hardware repairs, and configured network setups.</li>
+            <li>Delivered hands-on IT training covering system support, networking & troubleshooting.</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <div class="skill-group">
-        <h3>Networking</h3>
-        <div class="tags">
-          <span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">DHCP</span>
-          <span class="tag">VPN</span><span class="tag">Firewalls</span><span class="tag">Wireless</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h3>Databases</h3>
-        <div class="tags">
-          <span class="tag">MySQL</span><span class="tag">MSSQL</span><span class="tag">SQLite</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h3>Fintech</h3>
-        <div class="tags">
-          <span class="tag">FinFinancials</span><span class="tag">Bankers Realm</span><span class="tag">USSD</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h3>IoT</h3>
-        <div class="tags">
-          <span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">MQTT</span><span class="tag">Raspberry Pi</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h3>Languages (Spoken)</h3>
-        <div class="tags">
-          <span class="tag">English</span><span class="tag">Chichewa</span>
-        </div>
-      </div>
-
-      <div class="skill-group" style="margin-top:28px;">
-        <h3>Projects</h3>
+      <section class="card">
+        <div class="section-title">Projects</div>
 
         <div class="project">
-          <strong><a href="https://uniquesacco.com" target="_blank">uniquesacco.com</a></strong>
-          <p>Live SACCO website with CMS panel</p>
-          <p class="stack">PHP · CSS · JavaScript</p>
+          <div class="project-name">uniquesacco.com</div>
+          <div class="project-stack">HTML · CSS · JavaScript · PHP · CMS</div>
+          <p>Live SACCO business website with floating CMS panel and session-persistent content editing for non-technical staff.</p>
         </div>
+
         <div class="project">
-          <strong>Unique SACCO Android App</strong>
-          <p>Native app for member account access</p>
-          <p class="stack">Kotlin · REST API</p>
+          <div class="project-name">Unique SACCO Mobile App</div>
+          <div class="project-stack">Kotlin · Android · REST API</div>
+          <p>Native Android app enabling SACCO members to access accounts, view transactions, and use SACCO services on mobile.</p>
         </div>
+
         <div class="project">
-          <strong><a href="https://github.com/Nehemiahnganjo/Nganjo-OS" target="_blank">Ng'anjo OS</a></strong>
-          <p>Custom Arch Linux distro — GNOME + KDE + NeoDesktop</p>
-          <p class="stack">Bash · Archiso</p>
+          <div class="project-name">Atarah AI</div>
+          <div class="project-stack">Python · Django · LLM / AI API</div>
+          <p>Personal AI-powered application integrating large language model capabilities via API on a Django backend with custom frontend.</p>
         </div>
+
         <div class="project">
-          <strong><a href="https://github.com/Nehemiahnganjo/Brain-AI" target="_blank">Brain-AI</a></strong>
-          <p>AI assistant Django web app</p>
-          <p class="stack">Python · Django</p>
+          <div class="project-name">IoT & Raspberry Pi Automation</div>
+          <div class="project-stack">Python · Arduino · ESP32 · MQTT · Django</div>
+          <p>IoT solutions with Arduino/ESP32 microcontrollers and Django dashboards for real-time sensor monitoring and automated network management.</p>
         </div>
-        <div class="project">
-          <strong><a href="https://github.com/Nehemiahnganjo/Atarah-Assistant" target="_blank">Atarah Assistant</a></strong>
-          <p>AGI concept — voice, memory & reasoning</p>
-          <p class="stack">Python · AI</p>
-        </div>
-        <div class="project">
-          <strong>IoT Automation</strong>
-          <p>ESP32/Raspberry Pi dashboards & MQTT pipelines</p>
-          <p class="stack">Python · Arduino · MQTT</p>
-        </div>
-      </div>
+      </section>
 
     </div>
   </div>
-</div>
+</main>
+
+<footer>
+  <p>© 2026 Nehemiah Ng'anjo &nbsp;·&nbsp; Rumphi, Malawi &nbsp;·&nbsp; nehemiahnganjo@outlook.com</p>
+</footer>
+
 </body>
 </html>
