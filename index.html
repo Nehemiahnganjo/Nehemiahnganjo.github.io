@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nehemiah Ng'anjo — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #21262d;
+      --cyan: #00d4ff;
+      --purple: #7928ca;
+      --text: #e6edf3;
+      --muted: #8b949e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; line-height: 1.7; }
+
+    header {
+      background: linear-gradient(135deg, #0d1117 0%, #1a0533 50%, #001a2e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.4rem; font-weight: 700; background: linear-gradient(90deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header p.title { color: var(--cyan); margin: 8px 0 4px; font-size: 1rem; }
+    header p.location { color: var(--muted); font-size: 0.85rem; }
+    header .links { margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    header .links a {
+      color: var(--cyan); text-decoration: none; border: 1px solid var(--cyan);
+      padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s;
+    }
+    header .links a:hover { background: var(--cyan); color: var(--bg); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    section { margin-bottom: 48px; }
+    h2 {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+      color: var(--cyan); border-bottom: 1px solid var(--border);
+      padding-bottom: 8px; margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px 24px; margin-bottom: 14px;
+    }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; }
+    .card-header strong { color: var(--text); font-size: 1rem; }
+    .card-header span { color: var(--muted); font-size: 0.8rem; }
+    .card p { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
+    .card ul { color: var(--muted); font-size: 0.88rem; margin-top: 8px; padding-left: 18px; }
+    .card ul li { margin-bottom: 4px; }
+    .org { color: var(--cyan); font-size: 0.85rem; margin-top: 2px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag {
+      background: #0d1117; border: 1px solid var(--border);
+      color: var(--cyan); font-size: 0.75rem; padding: 3px 10px; border-radius: 20px;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px;
+    }
+    .skill-card h4 { color: var(--purple); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .skill-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.8; }
+
+    .project-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .project-table th { color: var(--muted); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 400; }
+    .project-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .project-table td:last-child { color: var(--muted); font-size: 0.78rem; }
+    .project-table a { color: var(--cyan); text-decoration: none; }
+    .project-table a:hover { text-decoration: underline; }
+    .project-table tr:last-child td { border-bottom: none; }
+
+    footer { text-align: center; color: var(--muted); font-size: 0.78rem; padding: 30px 20px; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Nehemiah Ng'anjo</h1>
+  <p class="title">IT Officer &amp; Full-Stack Developer</p>
+  <p class="location">📍 Rumphi, Malawi 🇲🇼 &nbsp;|&nbsp; UTC +02:00</p>
+  <div class="links">
+    <a href="mailto:nehemiahnganjo@outlook.com">✉ Email</a>
+    <a href="https://github.com/Nehemiahnganjo" target="_blank">⌥ GitHub</a>
+    <a href="https://wa.me/265882730381" target="_blank">💬 WhatsApp</a>
+    <a href="https://linkedin.com/in/nehemiah-ng-anjo-773ba01b5" target="_blank">in LinkedIn</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- About -->
+  <section>
+    <h2>About</h2>
+    <div class="card">
+      <p>Systems & network administrator, full-stack developer, and Linux distro builder based in Malawi. Currently IT Officer at Unique SACCO — managing infrastructure, networks, and custom software. Previously IT Technician at Malawi College of Accountancy. Building Ng'anjo OS, an Arch Linux based distro with GNOME and KDE editions, alongside a custom desktop environment called NeoDesktop.</p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <strong>IT Officer</strong>
+        <span>2023 — Present</span>
+      </div>
+      <p class="org">Unique SACCO (formerly Rumphi Teachers SACCO) — Rumphi, Malawi</p>
+      <ul>
+        <li>Manage full IT infrastructure — servers, networking, workstations</li>
+        <li>Built and maintain the SACCO website, CMS, and member portal (uniquesacco.com)</li>
+        <li>Developed custom SACCO management software with loans, savings & USSD integration</li>
+        <li>Configure and maintain Windows Server, Cisco networking equipment</li>
+        <li>Manage DHIS2 health information system deployments</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <strong>IT Technician</strong>
+        <span>Previous</span>
+      </div>
+      <p class="org">Malawi College of Accountancy — Malawi</p>
+      <ul>
+        <li>Hardware and software support across the institution</li>
+        <li>Network setup, maintenance, and troubleshooting</li>
+        <li>Windows Server configuration and user management</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <p>Python · PHP · Kotlin · JavaScript · Bash</p>
+      </div>
+      <div class="skill-card">
+        <h4>Frameworks</h4>
+        <p>Django · Laravel · Android SDK</p>
+      </div>
+      <div class="skill-card">
+        <h4>Infrastructure</h4>
+        <p>Cisco · Windows Server · VMware · Linux · DHIS2</p>
+      </div>
+      <div class="skill-card">
+        <h4>Databases</h4>
+        <p>MySQL · MSSQL · SQLite</p>
+      </div>
+      <div class="skill-card">
+        <h4>IoT</h4>
+        <p>ESP32 · Arduino · MQTT · Raspberry Pi</p>
+      </div>
+      <div class="skill-card">
+        <h4>Currently Building</h4>
+        <p>Ng'anjo OS · NeoDesktop GUI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="project-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Stack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Nganjo-OS" target="_blank">🐧 Nganjo-OS</a></td><td>Arch Linux distro — GNOME ✅ + KDE 🔧 + NeoDesktop in progress</td><td>Bash · Archiso</td></tr>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Brain-AI" target="_blank">🧠 Brain-AI</a></td><td>AI assistant — v1 → v2.1 Django web app</td><td>Python · Django</td></tr>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Atarah-Assistant" target="_blank">🤖 Atarah-Assistant</a></td><td>AGI concept — voice, memory & reasoning</td><td>Python · AI</td></tr>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Karonga-Village-Bank" target="_blank">🏦 Village Bank</a></td><td>Village banking system for Bank Mmuzi</td><td>Python · SQLite</td></tr>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Sacco-Glass-CMS-Hub" target="_blank">💳 Sacco CMS</a></td><td>SACCO management platform</td><td>TypeScript · React</td></tr>
+          <tr><td><a href="https://github.com/Nehemiahnganjo/Super-Farm" target="_blank">🌾 Super-Farm</a></td><td>Full farm management system</td><td>PHP · Laravel</td></tr>
+          <tr><td><a href="https://uniquesacco.com" target="_blank">🌐 uniquesacco.com</a></td><td>Live SACCO website + CMS + member portal</td><td>PHP · Laravel</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section>
+    <h2>Custom Software Development</h2>
+    <div class="card">
+      <p style="margin-bottom:12px;">Available for custom software projects — locally in Malawi and remotely.</p>
+      <div class="tags">
+        <span class="tag">POS & Retail Systems</span>
+        <span class="tag">SACCO & Banking</span>
+        <span class="tag">Hotel Management</span>
+        <span class="tag">Student Management</span>
+        <span class="tag">Farm Management</span>
+        <span class="tag">Android Apps</span>
+        <span class="tag">Business Websites</span>
+        <span class="tag">IoT & Automation</span>
+        <span class="tag">DHIS2</span>
+        <span class="tag">Network Setup</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Built by Nehemiah Ng'anjo · Rumphi, Malawi 🇲🇼 · <a href="mailto:nehemiahnganjo@outlook.com" style="color: #00d4ff;">nehemiahnganjo@outlook.com</a>
+</footer>
+
+</body>
+</html>
